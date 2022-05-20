@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="questionDao" class="com.example.springframeworkcoursehw1.dao.QuestionDAOImpl"/>
+    <bean id="answerDao" class="com.example.springframeworkcoursehw1.dao.AnswerDAOImpl"/>
+
+    <bean id="questionService" class="com.example.springframeworkcoursehw1.service.QuestionServiceImpl">
+        <constructor-arg name="questionDAO" ref="questionDao"/>
+        <constructor-arg name="answerDAO" ref="answerDao"/>
+        <constructor-arg name="fileName" value="src/main/resources/questions.csv"/>
+    </bean>
+</beans>
