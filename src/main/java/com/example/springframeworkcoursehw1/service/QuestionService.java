@@ -1,8 +1,13 @@
 package com.example.springframeworkcoursehw1.service;
 
 
-public interface QuestionService {
-    void parse();
+import com.example.springframeworkcoursehw1.model.Answer;
+import com.example.springframeworkcoursehw1.model.Question;
 
-    void start();
+import java.util.List;
+
+public interface QuestionService {
+    List<Question> parseQuestions();
+
+    List<Answer> start();
 }
